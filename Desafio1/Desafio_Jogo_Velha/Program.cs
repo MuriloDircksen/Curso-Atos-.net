@@ -7,7 +7,7 @@ namespace Desafio_Jogo_Velha
         static void Main(string[] args)
         {
             String[,] jogo = new string[3, 3];
-            String jogador = "X";
+            String jogador = " X ";
             IniciaTabuleiro(jogo);
             ApresentaTabuleiro(jogo);
 
@@ -127,6 +127,7 @@ namespace Desafio_Jogo_Velha
                 {
                    Console.WriteLine("Deu empate");
                     return false;
+                    //NovoJogo();
 
                 }
                 else
@@ -135,6 +136,10 @@ namespace Desafio_Jogo_Velha
                 }
             }
 
+        }
+        static void TrocaJogador(String jogador)
+        {
+            jogador = (jogador == " X ") ? " O " : " X ";
         }
     }
 }
