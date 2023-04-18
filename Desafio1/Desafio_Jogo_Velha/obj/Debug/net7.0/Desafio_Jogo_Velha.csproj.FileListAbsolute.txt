@@ -1,0 +1,15 @@
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\obj\Debug\net7.0\Desafio_Jogo_Velha.csproj.AssemblyReference.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\obj\Debug\net7.0\Desafio_Jogo_Velha.GeneratedMSBuildEditorConfig.editorconfig
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\obj\Debug\net7.0\Desafio_Jogo_Velha.AssemblyInfoInputs.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\obj\Debug\net7.0\Desafio_Jogo_Velha.AssemblyInfo.cs
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\obj\Debug\net7.0\Desafio_Jogo_Velha.csproj.CoreCompileInputs.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\bin\Debug\net7.0\Desafio_Jogo_Velha.exe
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\bin\Debug\net7.0\Desafio_Jogo_Velha.deps.json
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\bin\Debug\net7.0\Desafio_Jogo_Velha.runtimeconfig.json
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\bin\Debug\net7.0\Desafio_Jogo_Velha.dll
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\bin\Debug\net7.0\Desafio_Jogo_Velha.pdb
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\obj\Debug\net7.0\Desafio_Jogo_Velha.dll
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\obj\Debug\net7.0\refint\Desafio_Jogo_Velha.dll
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\obj\Debug\net7.0\Desafio_Jogo_Velha.pdb
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\obj\Debug\net7.0\Desafio_Jogo_Velha.genruntimeconfig.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio1\Desafio_Jogo_Velha\obj\Debug\net7.0\ref\Desafio_Jogo_Velha.dll
