@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace Desafio_Jogo_Velha
 {
@@ -141,5 +142,31 @@ namespace Desafio_Jogo_Velha
         {
             jogador = (jogador == " X ") ? " O " : " X ";
         }
+        static bool VerificaEspacoVazio (String[,] jogo, int linha, int coluna) 
+        {
+            return jogo[linha, coluna] == " - " ? true : false;
+        }     
+        
+        static void Jogar(String[,] jogo, String jogador, int linha, int coluna)
+        {
+            if (VerificaEspacoVazio(jogo, linha, coluna))
+            {
+                
+                jogo[linha,coluna] = jogador;
+                TrocaJogador(jogador);
+                if (VerificaVitoria(jogo, jogador))
+                {
+                    TrocaJogador(jogador);
+                    Console.WriteLine($"Jogador {jogador} venceu!");
+          
+                }                
+
+            }
+            else
+            {
+                Console.WriteLine("Espaço já definido!");
+            }
+        }
+           
     }
 }
