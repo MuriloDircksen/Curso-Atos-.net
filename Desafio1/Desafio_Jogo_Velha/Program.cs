@@ -16,7 +16,8 @@ namespace Desafio_Jogo_Velha
                 
                 Console.WriteLine("Bem vindo ao Jogo Da velha da Atos!");
                 Console.WriteLine("Escolha posições numa matriz 3X3 para colocar X ou O");
-                Console.WriteLine("Digite uma opção válida:\n1 - Novo Jogo\n2 - sair");
+                Console.WriteLine("Digite uma opção válida:\n1 - Novo Jogo P X P\n2 - Novo Jogo P X C modo fácil\n" +
+                    "3 - Novo Jogo P X C modo fácil\n4 - sair");
                 char opcao = char.Parse(Console.ReadLine());
                 switch(opcao){
 
@@ -61,6 +62,52 @@ namespace Desafio_Jogo_Velha
                         } while (controleVitoria);
                         break;
                     case '2':
+                        Console.Clear();
+                        IniciaTabuleiro(jogo);
+                        ApresentaTabuleiro(jogo);
+                        controleVitoria = true;
+                        do
+                        {
+                            if (jogador == " X ") {
+                                Console.WriteLine($"Diga qual posição da matriz deseja preencher com {jogador}");
+                                int linha = int.Parse(Console.ReadLine());
+                                int coluna = int.Parse(Console.ReadLine());
+                                Console.Clear();
+                                if (linha > 0 && linha <= 3)
+                                {
+                                    if (coluna > 0 && coluna <= 3)
+                                    {
+
+                                        if (VerificaEspacoVazio(jogo, linha, coluna))
+                                        {
+                                            Jogar(jogo, jogador, linha, coluna);
+                                            controleVitoria = !VerificaVitoria(jogo, jogador);
+                                            jogador = TrocaJogador(jogador);
+                                        }
+                                        else ApresentaTabuleiro(jogo);
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Posição inexistente");
+                                        ApresentaTabuleiro(jogo);
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Posição inexistente");
+                                    ApresentaTabuleiro(jogo);
+                                }
+                            }
+                            else
+                            {
+                                ComputadorModoFacil(jogo, jogador);
+                                controleVitoria = !VerificaVitoria(jogo, jogador);
+                                jogador = TrocaJogador(jogador);
+                            }
+                        } while (controleVitoria);
+                        break;
+                    case '4':
                         controle = false;
                         break;
                     default:
@@ -232,6 +279,19 @@ namespace Desafio_Jogo_Velha
                 ApresentaTabuleiro(jogo);
             }
         }
+
+        static void ComputadorModoFacil(String[,] jogo, String jogador) {
+            int linha, coluna;
+
+            do
+            {
+                var numeroAleatoria = new Random();
+                linha = numeroAleatoria.Next(1, 4);
+                coluna = numeroAleatoria.Next(1, 4);
+            } while (!VerificaEspacoVazio(jogo, linha, coluna));
+            Jogar(jogo, jogador, linha, coluna);
+        }
+        
 
         
            
