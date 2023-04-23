@@ -17,7 +17,7 @@ namespace Desafio_Jogo_Velha
                 Console.WriteLine("Bem vindo ao Jogo Da velha da Atos!");
                 Console.WriteLine("Escolha posições numa matriz 3X3 para colocar X ou O");
                 Console.WriteLine("Digite uma opção válida:\n1 - Novo Jogo P X P\n2 - Novo Jogo P X C modo fácil\n" +
-                    "3 - Novo Jogo P X C modo fácil\n4 - sair");
+                    "3 - Novo Jogo P X C modo dificil\n4 - sair");
                 char opcao = char.Parse(Console.ReadLine());
                 switch(opcao){
 
@@ -104,6 +104,64 @@ namespace Desafio_Jogo_Velha
                                 ComputadorModoFacil(jogo, jogador);
                                 controleVitoria = !VerificaVitoria(jogo, jogador);
                                 jogador = TrocaJogador(jogador);
+                            }
+                        } while (controleVitoria);
+                        break;
+                    case '3':
+                        Console.Clear();
+                        IniciaTabuleiro(jogo);
+                        ApresentaTabuleiro(jogo);
+                        controleVitoria = true;
+                        bool primeiraJogada = true;
+                        do
+                        {
+                            if (jogador == " X ")
+                            {
+                                Console.WriteLine($"Diga qual posição da matriz deseja preencher com {jogador}");
+                                int linha = int.Parse(Console.ReadLine());
+                                int coluna = int.Parse(Console.ReadLine());
+                                Console.Clear();
+                                if (linha > 0 && linha <= 3)
+                                {
+                                    if (coluna > 0 && coluna <= 3)
+                                    {
+
+                                        if (VerificaEspacoVazio(jogo, linha, coluna))
+                                        {
+                                            Jogar(jogo, jogador, linha, coluna);
+                                            controleVitoria = !VerificaVitoria(jogo, jogador);
+                                            jogador = TrocaJogador(jogador);
+                                        }
+                                        else ApresentaTabuleiro(jogo);
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Posição inexistente");
+                                        ApresentaTabuleiro(jogo);
+                                    }
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Posição inexistente");
+                                    ApresentaTabuleiro(jogo);
+                                }
+                            }
+                            else
+                            {
+                                if (primeiraJogada)
+                                {                                   
+                                    primeiraJogada = false;
+                                    ComputadorModoFacil(jogo, jogador);
+                                    jogador = TrocaJogador(jogador);
+                                }
+                                else
+                                {
+                                    ComputadorOfensivo(jogo);
+                                    Console.WriteLine("passei");
+                                    controleVitoria = !VerificaVitoria(jogo, jogador);
+                                    jogador = TrocaJogador(jogador);
+                                }
                             }
                         } while (controleVitoria);
                         break;
@@ -249,7 +307,7 @@ namespace Desafio_Jogo_Velha
 
         }
         static String TrocaJogador(String jogador)
-        {
+        {            
             return  (jogador == " X ") ? " O " : " X ";
         }
         static bool VerificaEspacoVazio (String[,] jogo, int linha, int coluna) 
@@ -265,6 +323,7 @@ namespace Desafio_Jogo_Velha
                 jogo[linha,coluna] = jogador;
                  
                 ApresentaTabuleiro(jogo);
+                
                 if (VerificaVitoria(jogo, jogador))
                 {
                     TrocaJogador(jogador);
@@ -281,8 +340,7 @@ namespace Desafio_Jogo_Velha
         }
 
         static void ComputadorModoFacil(String[,] jogo, String jogador) {
-            int linha, coluna;
-
+            int linha, coluna;            
             do
             {
                 var numeroAleatoria = new Random();
@@ -292,8 +350,112 @@ namespace Desafio_Jogo_Velha
             Jogar(jogo, jogador, linha, coluna);
         }
         
+        static bool ComputadorDefensivo(String[,] jogo, bool controle)
+        {
 
-        
-           
+            for (int l = 1; l <= 3; l++)
+            {
+                if (jogo[l, 1] == " X " && jogo[l, 2] == " X ") { Jogar(jogo, " O ", l, 3); controle = true; break; }
+
+                if (jogo[l, 1] == " X " && jogo[l, 3] == " X ") { Jogar(jogo, " O ", l, 2); controle = true; break; }
+
+                if (jogo[l, 2] == " X " && jogo[l, 3] == " X ") { Jogar(jogo, " O ", l, 1); controle = true; break; }
+            }
+
+            for (int c = 1; c <= 3; c++)
+            {
+                if (jogo[1, c] == " X " && jogo[2, c] == " X ") { Jogar(jogo, " O ", 3, c); controle = true; break; }
+
+                if (jogo[1, c] == " X " && jogo[3, c] == " X ") {Jogar(jogo, " O ", 2, c); controle = true; break; }
+
+                if (jogo[2, c] == " X " && jogo[3, c] == " X ") { Jogar(jogo, " O ", 1, c); controle = true; break; }
+            }
+
+            if (jogo[1, 1] == " X " && jogo[2, 2] == " X "){ Jogar(jogo, " O ", 3, 3); controle = true; }
+
+            if (jogo[1, 1] == " X " && jogo[3, 3] == " X ") { Jogar(jogo, " O ", 2, 2); controle = true; }
+
+            if (jogo[2, 2] == " X " && jogo[3, 3] == " X ") { Jogar(jogo, " O ", 1, 1); controle = true; }
+
+            if (jogo[1, 3] == " X " && jogo[2, 2] == " X ") { Jogar(jogo, " O ", 3, 1); controle = true; }
+
+            if (jogo[3, 1] == " X " && jogo[2, 2] == " X ") { Jogar(jogo, " O ", 1, 3); controle = true; }
+
+            if (jogo[1, 3] == " X " && jogo[3, 1] == " X ") { Jogar(jogo, " O ", 2, 2); controle = true; }
+
+            return controle;
+        }
+
+        static void ComputadorOfensivo(String[,] jogo)
+        {
+            bool controle = false;
+
+
+            controle = ComputadorDefensivo(jogo, controle);
+            Console.WriteLine(controle);
+
+            if (!controle)
+            {
+                for (int l = 1; l <= 3; l++)
+                {
+                    if (jogo[l, 1] == " O " && jogo[l, 2] == " O ") { Jogar(jogo, " O ", l, 3); break; }
+
+                    if (jogo[l, 1] == " O " && jogo[l, 3] == " O ") {Jogar(jogo, " O ", l, 2); break;}
+
+                    if (jogo[l, 2] == " O " && jogo[l, 3] == " O ") { Jogar(jogo, " O ", l, 1); break; }
+                    }
+
+                for (int c = 1; c <= 3; c++)
+                {
+                    if (jogo[1, c] == " O " && jogo[2, c] == " O ") { Jogar(jogo, " O ", 3, c); break; }
+
+                    if (jogo[1, c] == " O " && jogo[3, c] == " O ") { Jogar(jogo, " O ", 2, c); break; }
+
+                    if (jogo[2, c] == " O " && jogo[3, c] == " O ") { Jogar(jogo, " O ", 1, c); break; }
+                    }
+
+                if (jogo[1, 1] == " O " && jogo[2, 2] == " O ") Jogar(jogo, " O ", 3, 3);
+                if (jogo[1, 1] == " O " && jogo[3, 3] == " O ") Jogar(jogo, " O ", 2, 2);
+                if (jogo[2, 2] == " O " && jogo[3, 3] == " O ") Jogar(jogo, " O ", 1, 1);
+
+                if (jogo[1, 3] == " O " && jogo[2, 2] == " O ") Jogar(jogo, " O ", 3, 1);
+                if (jogo[3, 1] == " O " && jogo[2, 2] == " O ") Jogar(jogo, " O ", 1, 3);
+                if (jogo[1, 3] == " O " && jogo[3, 1] == " O ") Jogar(jogo, " O ", 2, 2);
+
+                for (int l = 0; l < 3; l++)
+                {
+                    for (int c = 0; c < 3; c++)
+                    {
+                        if (jogo[l, c] == " O ")
+                        {
+                            if (VerificaEspacoVazio(jogo, l + 1, c))
+                            {
+                                jogo[l + 1, c] = " O ";
+                                break;
+                            }
+                            if (VerificaEspacoVazio(jogo, l - 1, c))
+                            {
+                                jogo[l + 1, c] = " O ";
+                                break;
+                            }
+                            if (VerificaEspacoVazio(jogo, l, c + 1))
+                            {
+                                jogo[l + 1, c] = " O ";
+                                break;
+                            }
+                            if (VerificaEspacoVazio(jogo, l, c - 1))
+                            {
+                                jogo[l + 1, c] = " O ";
+                                break;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+            
+        }
+
     }
 }
