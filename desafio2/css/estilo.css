@@ -5,22 +5,26 @@
 }
 #fundoPrincipal{
     background: linear-gradient(rgba(19, 19, 19, 0.5), rgba(19, 19, 19, 0.5)), url("/imagens/vintage-bar-lamps.png") no-repeat;
-    
     background-size: cover;
     box-sizing: border-box;
 }
 
 .linkNavBar{
-    color: white;
     list-style: none;
     cursor: pointer;
     margin: 30px;
     font-size: 25px;
+    
+}
+a{
+    color: white !important;
+    text-decoration: none !important;
 }
 
 .container-nav{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items:center;
     justify-content: flex-end;
       
@@ -31,14 +35,13 @@
 }
 #container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between  ;
 }
 
 .container-article{
     display: flex;
-    align-items:flex-end;
     justify-content: center;
-    margin: 7%;
+   
     color:#e2e1e1;
     font-size: 50px;
     font-family: Snell Roundhand, cursive;
@@ -53,6 +56,8 @@
     left: 15%;
 }
 footer {
+    position: relative;
+    margin-top: 10%;
     width: 100%;
     padding: 10px;
     display: flex;
