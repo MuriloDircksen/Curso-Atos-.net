@@ -1,0 +1,63 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+#fundoPrincipal{
+    background: linear-gradient(rgba(19, 19, 19, 0.5), rgba(19, 19, 19, 0.5)), url("/imagens/vintage-bar-lamps.png") no-repeat;
+    
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+.linkNavBar{
+    color: white;
+    list-style: none;
+    cursor: pointer;
+    margin: 30px;
+    font-size: 25px;
+}
+
+.container-nav{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: flex-end;
+      
+}
+
+#imagem-logo{
+   width: 20%;
+}
+#container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-article{
+    display: flex;
+    align-items:flex-end;
+    justify-content: center;
+    margin: 7%;
+    color:#e2e1e1;
+    font-size: 50px;
+    font-family: Snell Roundhand, cursive;
+}
+
+#tituloInicio{
+    position: relative;
+    left: -40%;
+}
+#tituloInicio3{
+    position: relative;
+    left: 15%;
+}
+footer {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e2e1e1;
+    box-sizing: border-box;
+}

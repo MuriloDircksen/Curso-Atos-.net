@@ -18,7 +18,7 @@ namespace Desafio_Jogo_Velha
                 Console.WriteLine("Escolha posições numa matriz 3X3 para colocar X ou O");
                 Console.WriteLine("Digite uma opção válida:\n1 - Novo Jogo P X P\n2 - Novo Jogo P X C modo fácil\n" +
                     "3 - Novo Jogo P X C modo dificil\n4 - sair");
-                char opcao = char.Parse(Console.ReadLine());
+                char opcao = char.Parse(Console.ReadLine()!);
                 switch(opcao){
 
                     case '1':
@@ -29,8 +29,8 @@ namespace Desafio_Jogo_Velha
                         do
                         {
                             Console.WriteLine($"Diga qual posição da matriz deseja preencher com {jogador}");
-                            int linha = int.Parse(Console.ReadLine());
-                            int coluna = int.Parse(Console.ReadLine());
+                            int linha = int.Parse(Console.ReadLine()!);
+                            int coluna = int.Parse(Console.ReadLine()!);
                             Console.Clear();
                             if (linha > 0 && linha <= 3)
                             {
@@ -67,8 +67,8 @@ namespace Desafio_Jogo_Velha
                         {
                             if (jogador == " X ") {
                                 Console.WriteLine($"Diga qual posição da matriz deseja preencher com {jogador}");
-                                int linha = int.Parse(Console.ReadLine());
-                                int coluna = int.Parse(Console.ReadLine());
+                                int linha = int.Parse(Console.ReadLine()!);
+                                int coluna = int.Parse(Console.ReadLine()!);
                                 Console.Clear();
                                 if (linha > 0 && linha <= 3)
                                 {
@@ -242,12 +242,9 @@ namespace Desafio_Jogo_Velha
             pontos = 0;
             for (int d = 1; d <= 3; d++)
             {
-
                 if (jogo[d,d] == jogador)
                 {
-
                     pontos++;
-
                 }
             }
             if (pontos >= 3)
@@ -279,7 +276,6 @@ namespace Desafio_Jogo_Velha
                 int testa = 0;
                 for (int c = 1; c <= 3; c++)
                 {
-
                     for (int i = 1; i <= 3; i++)
                     {
                         if (jogo[i,c] != " - ")
@@ -291,16 +287,13 @@ namespace Desafio_Jogo_Velha
                 if (testa == 9)
                 {
                    Console.WriteLine("Deu empate");
-                    return false;
-                    
-
+                    return true;                 
                 }
                 else
                 {
                     return vitoria;
                 }
             }
-
         }
         static String TrocaJogador(String jogador)
         {            
