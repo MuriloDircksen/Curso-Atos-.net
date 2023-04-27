@@ -7,8 +7,8 @@
 header div h3{
     position: absolute;
     left: 45%;
-    top:20%;
-    color:#e2e1e1;
+    top:10%;
+    color: white;
     font-size: 50px;
     font-family: Snell Roundhand, cursive;
 }
@@ -29,18 +29,21 @@ header div h3{
 
 div.img {
     margin: 5px;
-    border: 1px solid #ccc;
+   
     float: left;
     width: 180px;
+    
 }
 
 div.img:hover {
     border: 1px solid #777;
+    border-radius: 5px;
 }
 
 div.img img {
     width: 100%;
     height: auto;
+    border-radius: 5px;
 }
 
 div.desc {

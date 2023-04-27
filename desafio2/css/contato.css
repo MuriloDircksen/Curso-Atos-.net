@@ -1,0 +1,44 @@
+.container-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 4%;
+    
+}
+#formulario{
+    
+    align-items: center;
+    justify-content: center;
+    margin: 3%;
+    max-width: 500px;
+}
+#container-map{
+    border: 0px;
+    margin: 3%;
+    
+}
+input, textarea {
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    color: black;   
+    border: 1px solid;
+}
+textarea{
+    width: 300px;
+}
+.container-botao{
+    display: flex;
+    justify-content: center;
+}
+.botao{
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 100px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}

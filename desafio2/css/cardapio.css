@@ -1,0 +1,14 @@
+.container-tabela{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6%;
+    font-size: 30px;
+}
+
+.imagem-cardapio{
+    width: 180px;
+}
+td{
+    padding: 20px;
+}
