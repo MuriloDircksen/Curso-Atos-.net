@@ -2,6 +2,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: Snell Roundhand, cursive;
 }
 #fundoPrincipal{
     background: linear-gradient(rgba(19, 19, 19, 0.5), rgba(19, 19, 19, 0.5)), url("/imagens/vintage-bar-lamps.png") no-repeat;
@@ -45,7 +46,7 @@ a{
     margin-top: 5%;
     color:white;
     font-size: 50px;
-    font-family: Snell Roundhand, cursive;
+    
 }
 
 #tituloInicio{
