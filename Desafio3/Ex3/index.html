@@ -7,18 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <select id="cor">
-        <option value="White">Branco</option>
-        <option value="green">Verde</option>
-        <option value="red">Vermelho</option>
-        <option value="blue">Azul</option>
-        <option value="yellow">Amarelo</option>
-    </select>
+    
+        
+        <input onclick="TrocaCor('green')" type="radio" name="cor" value="green">Verde</input>
+        <input onclick="TrocaCor('red')" type="radio" name="cor" value="red">Vermelho</input>
+        <input onclick="TrocaCor('blue')" type="radio" name="cor" value="blue">Azul</input>
+        <input onclick="TrocaCor('yellow')" type="radio" name="cor" value="yellow">Amarelo</input>
+    
     <script>
-        var cor = document.getElementById('cor');
-        cor.addEventListener('change', function(){
-            document.body.style.backgroundColor = cor.value;
-        })
+        
+        function TrocaCor(cor){
+            document.body.style.backgroundColor = cor;
+        }
     </script>
 </body>
 </html>
