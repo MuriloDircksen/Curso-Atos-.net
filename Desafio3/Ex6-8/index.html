@@ -8,22 +8,21 @@
 </head>
 <body>
     
-    <p style="font-size: 10px;" id="p">Texto exemplo</p><br><br>
+    <p style="font-size: 20px;" id="p">Texto exemplo</p><br><br>
     <button onclick="MudaCorLetra('black')">Letra Preta</button>
     <button onclick="MudaCorLetra('white')">Letra Branca</button>
     <button onclick="MudaCorFundo('black')">Fundo Preta</button>
     <button onclick="MudaCorFundo('white')">Fundo Branco</button>
     <button onclick="MudaTamanho('+')">+</button>
     <button onclick="MudaTamanho('-')">-</button>
-    <button onclick="MudaTamanho('up')">Maisculo</button>
-    <button onclick="MudaTamanho('down')">Minusculo</button>
+    <button onclick="MudaLetra('up')">Maisculo</button>
+    <button onclick="MudaLetra('down')">Minusculo</button>
     
     
 
     <script>
         const p = document.getElementById("p");
-        let fonte = 10; 
-        console.log(fonte);
+        let fonte = 20;         
         function MudaCorLetra(cor){
             p.style.color = cor;
         }
@@ -39,6 +38,16 @@
             else {
                 fonte--
                 p.style.fontSize = fonte + "px";
+            }
+        }
+        function MudaLetra(direcao){
+            
+            if(direcao == "up"){
+                
+               p.innerText=  p.innerText.toUpperCase();
+            }
+            else {
+                p.innerText=  p.innerText.toLowerCase();
             }
         }
     </script>
