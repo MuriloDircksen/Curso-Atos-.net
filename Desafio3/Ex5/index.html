@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="checkbox" name="check"><label for="check1">checkbox 1</label>
+        <input type="checkbox" name="check"><label for="check1">checkbox 2</label>
+        <input type="checkbox" name="check"><label for="check1">checkbox 3</label>
+        <input type="checkbox" name="check"><label for="check1">checkbox 4</label>
+        <button id="btn" disabled="true">Botão</button>
+    </form>
+
+    <script>
+        const boxes = document.getElementsByName("check");
+        const bt = document.getElementById('btn');
+        for(var i = 0; i< boxes.length; i++){
+            
+            boxes[i].onclick =  function(){
+                                
+                var cont = document.querySelectorAll("input[name='check']:checked").length;
+                                
+                bt.disabled = cont > 1 ? false : true;        
+            }          
+        }                     
+    </script>
+</body>
+</html>
