@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="p">Texto exemplo</p><br><br>
+    <button onclick="MudaCorLetra('black')">Letra Preta</button>
+    <button onclick="MudaCorLetra('white')">Letra Branca</button>
+    <button onclick="MudaCorFundo('black')">Fundo Preta</button>
+    <button onclick="MudaCorFundo('white')">Fundo Branco</button>
+
+    <script>
+        const p = document.getElementById("p");
+        function MudaCorLetra(cor){
+            p.style.color = cor;
+        }
+        function MudaCorFundo(cor){
+            p.style.backgroundColor = cor;
+        }
+    </script>
+</body>
+</html>
