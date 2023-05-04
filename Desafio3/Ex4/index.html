@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p">Texto exemplo</p>
+    <button onclick="MudaTagP()">Muda estado</button>
+    <script>
+        function MudaTagP(){
+            const display = document.getElementById('p').style.display;
+            if(display == "none")
+                document.getElementById('p').style.display = 'block';
+            else
+                document.getElementById('p').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
