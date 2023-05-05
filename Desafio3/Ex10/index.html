@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+          <form id="form" class="register-form">
+            <input name="input" type="text" placeholder="Nome" required />
+            <div class="form-radio">
+              <div>
+                <label for="pessoaFisica">Pessoa Fisica</label>
+                <input type="radio" name="pessoa" id="pessoaFisica" checked>
+              </div>
+              <div>
+                <label for="pessoaJuridica">Pessoa Juridica</label>
+                <input type="radio" name="pessoa" id="pessoaJuridica">
+              </div>
+            </div>
+            <input name="input" id="cpf" type="text" placeholder="CPF" minlength="11" maxlength="11" required />
+            <input name="input" id="cnpj" type="text" placeholder="CNPJ" minlength="14" maxlength="14" required  disabled/>
+            <input name="input" id="data-nascimento" type="date" placeholder="Data de Nascimento" required />
+            <input name="input" type="text" placeholder="Endereço" required />
+            <input name="input" type="number" placeholder="CEP" minlength="8" maxlength="8" required />
+            <input name="input" type="text" placeholder="Telefone" minlength="11" maxlength="11" required/>
+            <input name="input" type="email" placeholder="E-mail" required/>
+            <button id="btn">Criar Conta</button>
+            <p class="message">Registrado? <a href="#">Sign In</a></p>
+          </form>          
+        </div>
+      </div>
+      <script>
+        const form = document.getElementById('form');
+
+        form.addEventListener('change', ()=>{
+          const cpf = document.getElementById('cpf');
+          const cnpj = document.getElementById('cnpj');
+          const dataNascimento = document.getElementById('data-nascimento');
+          const pessoaFisica = document.getElementById('pessoaFisica');
+          const pessoaJuridica = document.getElementById('pessoaJuridica');
+
+          if(pessoaFisica.checked){
+            cnpj.disabled = true;
+            cpf.disabled = false;
+            dataNascimento.disabled = false;
+            return
+          }
+          if(pessoaJuridica.checked){
+            cpf.disabled = true;
+            cnpj.disabled = false;
+            dataNascimento.disabled = true;
+            return
+          }
+        })
+
+        const botao = document.getElementById('btn');
+        
+        botao.addEventListener('click', function(){})
+        
+
+      </script>
+</body>
+</html>
