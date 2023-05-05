@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" media="screen" />
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+          <form id="form" class="register-form">
+            <input name="input" type="text" placeholder="Login" required />
+            <input name="input" id="senha" type="password" placeholder="Senha" minlength="6" maxlength="10" required/>
+            <input name="input" id="confirmaSenha" type="password" placeholder="Confirmação de senha" minlength="6" maxlength="10" required/>
+            <button id="btn">Criar Conta</button>
+            <p class="message">Registrado? <a href="#">Sign In</a></p>
+          </form>          
+        </div>
+      </div>
+      <script>
+        const botao = document.getElementById('btn');
+        const senha = document.getElementById('senha');
+        const confirmaSenha = document.getElementById('confirmaSenha');
+        const input = document.getElementsByName("input");
+
+        botao.addEventListener('click', function(event){
+           
+            if(senha.value != confirmaSenha.value){
+                event.preventDefault();
+                alert('Senha e confirmação de senha não batem!');
+                return;               
+            }
+            
+            
+        })
+        
+
+      </script>
+</body>
+</html>
