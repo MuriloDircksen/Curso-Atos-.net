@@ -11,7 +11,7 @@
     <div class="login-page">
         <div class="form">
           <form id="form" class="register-form" method="get">
-            <input name="input" type="text" placeholder="Nome" required />
+            <input name="nome" id="nome" type="text" placeholder="Nome" required />
             <div class="form-radio">
               <div>
                 <label for="pessoaFisica">Pessoa Fisica</label>
@@ -22,13 +22,13 @@
                 <input type="radio" name="pessoa" id="pessoaJuridica">
               </div>
             </div>
-            <input name="input" id="cpf" type="text" placeholder="CPF" minlength="11" maxlength="11" required />
-            <input name="input" id="cnpj" type="text" placeholder="CNPJ" minlength="14" maxlength="14" required  disabled/>
-            <input name="input" id="data-nascimento" type="date" placeholder="Data de Nascimento" required />
-            <input name="input" type="text" placeholder="Endereço" required />
-            <input name="input" type="number" placeholder="CEP" minlength="8" maxlength="8" required />
-            <input name="input" type="text" placeholder="Telefone" minlength="11" maxlength="11" required/>
-            <input name="input" type="email" placeholder="E-mail" required/>
+            <input name="cpf" id="cpf" type="text" placeholder="CPF" minlength="11" maxlength="11" required />
+            <input name="cnpj" id="cnpj" type="text" placeholder="CNPJ" minlength="14" maxlength="14" required  disabled/>
+            <input name="dataNascimento" id="data-nascimento" type="text" placeholder="Data de Nascimento" required />
+            <input name="endereco" type="text" placeholder="Endereço" required />
+            <input name="cep" id="cep" type="text" placeholder="CEP" minlength="8" maxlength="8" required />
+            <input name="telefone" type="text" placeholder="Telefone" minlength="11" maxlength="11" required/>
+            <input name="email" type="email" placeholder="E-mail" required/>
             <button id="btn">Criar Conta</button>
             <p class="message">Registrado? <a href="#">Sign In</a></p>
           </form>          
@@ -36,14 +36,16 @@
       </div>
       <script>
         const form = document.getElementById('form');
-
+        const nome = document.getElementById('nome')
+        const cpf = document.getElementById('cpf');
+        const cnpj = document.getElementById('cnpj');
+        const dataNascimento = document.getElementById('data-nascimento');
+        const pessoaFisica = document.getElementById('pessoaFisica');
+        const pessoaJuridica = document.getElementById('pessoaJuridica');
+        const cep = document.getElementById("cep");
+        
         form.addEventListener('change', ()=>{
-          const cpf = document.getElementById('cpf');
-          const cnpj = document.getElementById('cnpj');
-          const dataNascimento = document.getElementById('data-nascimento');
-          const pessoaFisica = document.getElementById('pessoaFisica');
-          const pessoaJuridica = document.getElementById('pessoaJuridica');
-
+          
           if(pessoaFisica.checked){
             cnpj.disabled = true;
             cpf.disabled = false;
@@ -56,11 +58,35 @@
             dataNascimento.disabled = true;
             return
           }
+          
         })
 
         const botao = document.getElementById('btn');
         
-        botao.addEventListener('click', function(){})
+        botao.addEventListener('click', function(){
+          event.preventDefault();
+          if(nome.value == null || nome.value == ""){
+            event.preventDefault();
+            alert("Insira um nome válido!");
+            nome.focus();
+            return;   
+          }
+          const somenteNumeros = new RegExp('^[0-9]+$');
+          if(!somenteNumeros.test(dataNascimento.value) ){
+              event.preventDefault();
+              alert('Somente numeros no campo Data Nascimento!');
+              dataNascimento.focus();
+              return;    
+          }
+          if(!somenteNumeros.test(cep.value) && cep.value.length != 8){
+              event.preventDefault();
+              alert('Somente numeros e 8 caracteres no campo cep!');
+              cep.focus();
+              return;    
+          }
+         
+          
+        })
         
 
       </script>
