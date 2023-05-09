@@ -10,8 +10,8 @@
 <body>
     <div class="login-page">
         <div class="form">
-          <form id="form" class="register-form" method="get">
-            <input name="input" type="text" placeholder="Login" required />
+          <form id="form" class="register-form" method="get" name="formuario">
+            <input name="input" id="nome"type="text" placeholder="Login" required />
             <input name="input" id="senha" type="password" placeholder="Senha" minlength="6" maxlength="10" required/>
             <input name="input" id="confirmaSenha" type="password" placeholder="Confirmação de senha" minlength="6" maxlength="10" required/>
             <button id="btn">Criar Conta</button>
@@ -23,17 +23,33 @@
         const botao = document.getElementById('btn');
         const senha = document.getElementById('senha');
         const confirmaSenha = document.getElementById('confirmaSenha');
-        
+        const nome = document.getElementById('nome');
+
         botao.addEventListener('click', function(event){
-           
+          //event.preventDefault(); 
+            if(nome.value == null || nome.value == ""){
+              event.preventDefault();                
+              alert('Campo nome precisa ser preenchido!');
+              nome.focus();
+              return;               
+            }
+            if(senha.value.length < 6 || senha.value.length > 10){
+              event.preventDefault();                
+              alert('Campo precisa ter no minimo 6 e maximo 10 caracteres!');
+              senha.focus();
+              return;    
+            }
+            
             if(senha.value != confirmaSenha.value){
                 event.preventDefault();
                 alert('Senha e confirmação de senha não batem!');
+                confirmaSenha.focus();
                 return;               
             }
             
             
         })
+        
         
 
       </script>
