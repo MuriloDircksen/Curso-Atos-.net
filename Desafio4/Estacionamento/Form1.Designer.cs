@@ -28,26 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             textBoxPlacaVeiculo = new TextBox();
-            groupBox1 = new GroupBox();
-            radioButtonEntrada = new RadioButton();
-            radioButtonSaida = new RadioButton();
             Hora = new Label();
             textBoxHora = new TextBox();
-            labelDataAtual = new Label();
             textBoxListaVeiculosEntrada = new TextBox();
             textBoxListaSaidaVeiculos = new TextBox();
             labelListaVeiculosEntrada = new Label();
             labelListaVeiculosSaida = new Label();
-            buttonGravar = new Button();
-            groupBox1.SuspendLayout();
+            buttonEntrada = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
+            timer2 = new System.Windows.Forms.Timer(components);
+            timer3 = new System.Windows.Forms.Timer(components);
+            labeldata = new Label();
+            timer4 = new System.Windows.Forms.Timer(components);
+            timer5 = new System.Windows.Forms.Timer(components);
+            buttonsaida = new Button();
+            label2 = new Label();
+            label3 = new Label();
+            textBoxTempoPermanencia = new TextBox();
+            textBoxValorPagar = new TextBox();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(214, 15);
+            label1.Location = new Point(168, 9);
             label1.Name = "label1";
             label1.Size = new Size(141, 20);
             label1.TabIndex = 0;
@@ -55,68 +62,26 @@
             // 
             // textBoxPlacaVeiculo
             // 
-            textBoxPlacaVeiculo.Location = new Point(214, 38);
+            textBoxPlacaVeiculo.Location = new Point(168, 38);
             textBoxPlacaVeiculo.Name = "textBoxPlacaVeiculo";
             textBoxPlacaVeiculo.Size = new Size(125, 27);
             textBoxPlacaVeiculo.TabIndex = 1;
             // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(radioButtonSaida);
-            groupBox1.Controls.Add(radioButtonEntrada);
-            groupBox1.Location = new Point(411, 15);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(250, 125);
-            groupBox1.TabIndex = 2;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
-            // 
-            // radioButtonEntrada
-            // 
-            radioButtonEntrada.AutoSize = true;
-            radioButtonEntrada.Location = new Point(33, 26);
-            radioButtonEntrada.Name = "radioButtonEntrada";
-            radioButtonEntrada.Size = new Size(81, 24);
-            radioButtonEntrada.TabIndex = 0;
-            radioButtonEntrada.TabStop = true;
-            radioButtonEntrada.Text = "Entrada";
-            radioButtonEntrada.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonSaida
-            // 
-            radioButtonSaida.AutoSize = true;
-            radioButtonSaida.Location = new Point(33, 80);
-            radioButtonSaida.Name = "radioButtonSaida";
-            radioButtonSaida.Size = new Size(67, 24);
-            radioButtonSaida.TabIndex = 1;
-            radioButtonSaida.TabStop = true;
-            radioButtonSaida.Text = "Saida";
-            radioButtonSaida.UseVisualStyleBackColor = true;
-            // 
             // Hora
             // 
             Hora.AutoSize = true;
-            Hora.Location = new Point(217, 77);
+            Hora.Location = new Point(167, 81);
             Hora.Name = "Hora";
-            Hora.Size = new Size(42, 20);
+            Hora.Size = new Size(126, 20);
             Hora.TabIndex = 3;
-            Hora.Text = "Hora";
+            Hora.Text = "Hora (HH:MM:SS)";
             // 
             // textBoxHora
             // 
-            textBoxHora.Location = new Point(213, 105);
+            textBoxHora.Location = new Point(168, 118);
             textBoxHora.Name = "textBoxHora";
             textBoxHora.Size = new Size(125, 27);
             textBoxHora.TabIndex = 4;
-            // 
-            // labelDataAtual
-            // 
-            labelDataAtual.AutoSize = true;
-            labelDataAtual.Location = new Point(107, 425);
-            labelDataAtual.Name = "labelDataAtual";
-            labelDataAtual.Size = new Size(176, 20);
-            labelDataAtual.TabIndex = 5;
-            labelDataAtual.Text = "DateTime.Now.ToString()";
             // 
             // textBoxListaVeiculosEntrada
             // 
@@ -130,7 +95,7 @@
             // 
             // textBoxListaSaidaVeiculos
             // 
-            textBoxListaSaidaVeiculos.Location = new Point(605, 213);
+            textBoxListaSaidaVeiculos.Location = new Point(628, 213);
             textBoxListaSaidaVeiculos.Multiline = true;
             textBoxListaSaidaVeiculos.Name = "textBoxListaSaidaVeiculos";
             textBoxListaSaidaVeiculos.ReadOnly = true;
@@ -141,7 +106,7 @@
             // labelListaVeiculosEntrada
             // 
             labelListaVeiculosEntrada.AutoSize = true;
-            labelListaVeiculosEntrada.Location = new Point(246, 183);
+            labelListaVeiculosEntrada.Location = new Point(217, 183);
             labelListaVeiculosEntrada.Name = "labelListaVeiculosEntrada";
             labelListaVeiculosEntrada.Size = new Size(162, 20);
             labelListaVeiculosEntrada.TabIndex = 8;
@@ -150,42 +115,97 @@
             // labelListaVeiculosSaida
             // 
             labelListaVeiculosSaida.AutoSize = true;
-            labelListaVeiculosSaida.Location = new Point(750, 183);
+            labelListaVeiculosSaida.Location = new Point(771, 183);
             labelListaVeiculosSaida.Name = "labelListaVeiculosSaida";
             labelListaVeiculosSaida.Size = new Size(138, 20);
             labelListaVeiculosSaida.TabIndex = 9;
             labelListaVeiculosSaida.Text = "Lista Veiculos Saida";
             // 
-            // buttonGravar
+            // buttonEntrada
             // 
-            buttonGravar.Location = new Point(700, 68);
-            buttonGravar.Name = "buttonGravar";
-            buttonGravar.Size = new Size(94, 29);
-            buttonGravar.TabIndex = 10;
-            buttonGravar.Text = "Gravar";
-            buttonGravar.UseVisualStyleBackColor = true;
-            buttonGravar.Click += buttonGravar_Click;
+            buttonEntrada.Location = new Point(396, 38);
+            buttonEntrada.Name = "buttonEntrada";
+            buttonEntrada.Size = new Size(94, 29);
+            buttonEntrada.TabIndex = 10;
+            buttonEntrada.Text = "Entrada";
+            buttonEntrada.UseVisualStyleBackColor = true;
+            buttonEntrada.Click += buttonGravar_Click;
+            // 
+            // labeldata
+            // 
+            labeldata.AutoSize = true;
+            labeldata.Location = new Point(935, 15);
+            labeldata.Name = "labeldata";
+            labeldata.Size = new Size(50, 20);
+            labeldata.TabIndex = 11;
+            labeldata.Text = "label2";
+            // 
+            // buttonsaida
+            // 
+            buttonsaida.Location = new Point(396, 109);
+            buttonsaida.Name = "buttonsaida";
+            buttonsaida.Size = new Size(94, 29);
+            buttonsaida.TabIndex = 12;
+            buttonsaida.Text = "Saida";
+            buttonsaida.UseVisualStyleBackColor = true;
+            buttonsaida.Click += buttonsaida_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(597, 77);
+            label2.Name = "label2";
+            label2.Size = new Size(143, 20);
+            label2.TabIndex = 13;
+            label2.Text = "Tempo Permanencia";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(597, 121);
+            label3.Name = "label3";
+            label3.Size = new Size(96, 20);
+            label3.TabIndex = 14;
+            label3.Text = "Valor a Pagar";
+            // 
+            // textBoxTempoPermanencia
+            // 
+            textBoxTempoPermanencia.Location = new Point(761, 74);
+            textBoxTempoPermanencia.Name = "textBoxTempoPermanencia";
+            textBoxTempoPermanencia.ReadOnly = true;
+            textBoxTempoPermanencia.Size = new Size(125, 27);
+            textBoxTempoPermanencia.TabIndex = 15;
+            // 
+            // textBoxValorPagar
+            // 
+            textBoxValorPagar.Location = new Point(761, 114);
+            textBoxValorPagar.Name = "textBoxValorPagar";
+            textBoxValorPagar.ReadOnly = true;
+            textBoxValorPagar.Size = new Size(125, 27);
+            textBoxValorPagar.TabIndex = 16;
             // 
             // ControleGaragem
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1075, 503);
-            Controls.Add(buttonGravar);
+            ClientSize = new Size(1075, 394);
+            Controls.Add(textBoxValorPagar);
+            Controls.Add(textBoxTempoPermanencia);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(buttonsaida);
+            Controls.Add(labeldata);
+            Controls.Add(buttonEntrada);
             Controls.Add(labelListaVeiculosSaida);
-            Controls.Add(labelListaVeiculosEntrada);
             Controls.Add(textBoxListaSaidaVeiculos);
+            Controls.Add(labelListaVeiculosEntrada);
             Controls.Add(textBoxListaVeiculosEntrada);
-            Controls.Add(labelDataAtual);
             Controls.Add(textBoxHora);
             Controls.Add(Hora);
-            Controls.Add(groupBox1);
             Controls.Add(textBoxPlacaVeiculo);
             Controls.Add(label1);
             Name = "ControleGaragem";
-            Text = "Placa veiculo";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            Text = "Garagem";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -194,16 +214,23 @@
 
         private Label label1;
         private TextBox textBoxPlacaVeiculo;
-        private GroupBox groupBox1;
-        private RadioButton radioButtonSaida;
-        private RadioButton radioButtonEntrada;
         private Label Hora;
         private TextBox textBoxHora;
-        private Label labelDataAtual;
         private TextBox textBoxListaVeiculosEntrada;
         private TextBox textBoxListaSaidaVeiculos;
         private Label labelListaVeiculosEntrada;
         private Label labelListaVeiculosSaida;
-        private Button buttonGravar;
+        private Button buttonEntrada;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
+        private Label labeldata;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Timer timer5;
+        private Button buttonsaida;
+        private Label label2;
+        private Label label3;
+        private TextBox textBoxTempoPermanencia;
+        private TextBox textBoxValorPagar;
     }
 }

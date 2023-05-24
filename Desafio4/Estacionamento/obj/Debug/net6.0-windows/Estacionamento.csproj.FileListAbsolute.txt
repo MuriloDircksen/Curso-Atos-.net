@@ -1,0 +1,17 @@
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\bin\Debug\net6.0-windows\Estacionamento.exe
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\bin\Debug\net6.0-windows\Estacionamento.deps.json
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\bin\Debug\net6.0-windows\Estacionamento.runtimeconfig.json
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\bin\Debug\net6.0-windows\Estacionamento.dll
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\bin\Debug\net6.0-windows\Estacionamento.pdb
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\Estacionamento.csproj.AssemblyReference.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\Estacionamento.ControleGaragem.resources
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\Estacionamento.csproj.GenerateResource.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\Estacionamento.GeneratedMSBuildEditorConfig.editorconfig
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\Estacionamento.AssemblyInfoInputs.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\Estacionamento.AssemblyInfo.cs
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\Estacionamento.csproj.CoreCompileInputs.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\Estacionamento.dll
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\refint\Estacionamento.dll
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\Estacionamento.pdb
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\Estacionamento.genruntimeconfig.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Estacionamento\obj\Debug\net6.0-windows\ref\Estacionamento.dll

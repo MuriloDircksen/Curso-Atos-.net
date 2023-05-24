@@ -56,7 +56,7 @@ namespace Estacionamento.models
 
                 foreach (var item in listaVeiculosEntrada)
                 {
-                    escritor.WriteLine(item.PlacaVeiculo + ";" + item.DataEntrada + ";" + item.HoraEntrada);
+                    escritor.WriteLine(item.PlacaVeiculo + ";" + item.DataEntrada.ToString("dd/MM/yyyy") + ";" + item.HoraEntrada.ToString("hh:mm:ss tt"));
                     escritor.Flush();
                 }
                 escritor.Close();
@@ -74,7 +74,7 @@ namespace Estacionamento.models
 
                 foreach (var item in listaVeiculosSaida)
                 {
-                    escritor.WriteLine(item.PlacaVeiculo + ";" + item.DataEntrada + ";" + item.HoraEntrada + ";" + item.TempoPermanencia + ";" + item.ValorCobrado);
+                    escritor.WriteLine(item.PlacaVeiculo + ";" + item.DataEntrada.ToString("dd/MM/yyyy") + ";" + item.HoraEntrada.ToString("hh:mm:ss tt") + ";" + item.TempoPermanencia + ";" + item.ValorCobrado);
                     escritor.Flush();
                 }
                 escritor.Close();

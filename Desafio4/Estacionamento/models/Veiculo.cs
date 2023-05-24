@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Estacionamento.models
 {
-    internal class Veiculo
+   public class Veiculo
     {
         public string PlacaVeiculo { get;}
         public DateTime DataEntrada { get;}
@@ -23,7 +23,7 @@ namespace Estacionamento.models
             DataEntrada = dataEntrada();
             HoraEntrada = horaEntrada;
         }
-        //seuLabel.Text = DateTime.Now.ToString();
+       
         public Veiculo(string placaVeiculo, DateTime dataEntrada, DateTime horaEntrada)
         {
             PlacaVeiculo = placaVeiculo;
@@ -42,7 +42,7 @@ namespace Estacionamento.models
             return DateTime.Now.Date;
         }
 
-        public bool PlacaJaCadastrada(String placaJaCadastrada, List<Veiculo> listaVeiculosEntrada)
+        public static bool PlacaJaCadastrada(String placaJaCadastrada, List<Veiculo> listaVeiculosEntrada)
         {
             foreach(var veiculo in listaVeiculosEntrada)
             {
@@ -50,28 +50,33 @@ namespace Estacionamento.models
             }
             return false;
         }
-        public void PopulaListaEntrada(Veiculo veiculo, List<Veiculo> listaVeiculosEntrada)
+        public static Veiculo RetornaVeiculo(List<Veiculo> listaVeiculo, string placa)
         {
-            listaVeiculosEntrada.Add(veiculo);
+            foreach(var item in listaVeiculo)
+            {
+                if(item.PlacaVeiculo == placa)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
-        public void RemoveVeiculoListaEntrada(Veiculo veiculo, List<Veiculo> listaVeiculosEntrada)
+        public static void PopulaListaSaidaVeiculos(String placa, DateTime horaDeSaida, List<Veiculo> listaVeiculosSaida, List<Veiculo> listaVeiculosEntrada)
         {
-            listaVeiculosEntrada.Remove(veiculo);
-        }
-
-        public void PopulaListaSaidaVeiculos(Veiculo veiculo, DateTime horaDeSaida, List<Veiculo> listaVeiculosSaida)
-        {
-            //tempo permanencia
-            var tempoPermanencia = veiculo.HoraEntrada - horaDeSaida;
-            //valor pago
+            var veiculo = RetornaVeiculo(listaVeiculosEntrada, placa);
+            
+            var tempoPermanencia =   horaDeSaida - veiculo.HoraEntrada;
+            
             double valorPago = ValorPago(tempoPermanencia);
-            //popula lista saida
+            
             listaVeiculosSaida.Add(new Veiculo(veiculo.PlacaVeiculo, veiculo.DataEntrada, veiculo.HoraEntrada, tempoPermanencia.TotalMinutes, valorPago));
+            listaVeiculosEntrada.Remove(veiculo);
+            
         }
 
-        public double ValorPago(TimeSpan tempoPermanencia)
+        public static double ValorPago(TimeSpan tempoPermanencia)
         {
-            return 5 * Math.Ceiling(tempoPermanencia.TotalHours);
+            return 5.0 * Math.Ceiling(tempoPermanencia.TotalHours);
         }
     }
 }
