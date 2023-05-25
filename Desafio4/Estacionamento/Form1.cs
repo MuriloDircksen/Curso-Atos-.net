@@ -29,7 +29,7 @@ namespace Estacionamento
             textBoxListaVeiculosEntrada.Clear();
             foreach (var item in listaVeiculosEntrada)
             {
-                textBoxListaVeiculosEntrada.AppendText(item.PlacaVeiculo + " ; "
+                textBoxListaVeiculosEntrada.AppendText(item.PlacaVeiculo.ToUpper() + " ; "
                     + item.DataEntrada.ToString("dd/MM/yyyy") + " ; "
                     + item.HoraEntrada.ToString("hh:mm:ss tt")
                     + Environment.NewLine);
@@ -40,11 +40,11 @@ namespace Estacionamento
             textBoxListaSaidaVeiculos.Clear();
             foreach (var item in listaVeiculosSaida)
             {
-                textBoxListaSaidaVeiculos.AppendText(item.PlacaVeiculo + " ; "
+                textBoxListaSaidaVeiculos.AppendText(item.PlacaVeiculo.ToUpper() + " ; "
                     + item.DataEntrada.ToString("dd/MM/yyyy") + " ; "
                     + item.HoraEntrada.ToString("hh:mm:ss tt") + " ; "
-                    + item.TempoPermanencia + " ; "
-                    + item.ValorCobrado
+                    + item.TempoPermanencia + " min ; "
+                    + item.ValorCobrado.ToString("C2")
                     + Environment.NewLine);
             }
         }
@@ -53,7 +53,7 @@ namespace Estacionamento
         {
             textBoxTempoPermanencia.Text = "";
             textBoxValorPagar.Text = "";
-            string placa = textBoxPlacaVeiculo.Text;
+            string placa = textBoxPlacaVeiculo.Text.ToUpper();
             string hora = textBoxHora.Text;
 
             if (string.IsNullOrEmpty(placa))
@@ -93,6 +93,7 @@ namespace Estacionamento
                 return;
             }
             listaVeiculosEntrada.Add(new Veiculo(placa, horaInformada));
+            MessageBox.Show("Veiculo cadastrado com Sucesso!");
             atualizarTextBoxEntrada();
             Persistencia.gravarArquivoVeiculosEntrada(listaVeiculosEntrada);
             textBoxPlacaVeiculo.Text = "";
@@ -106,7 +107,7 @@ namespace Estacionamento
         {
             textBoxTempoPermanencia.Text = "";
             textBoxValorPagar.Text = "";
-            string placa = textBoxPlacaVeiculo.Text;
+            string placa = textBoxPlacaVeiculo.Text.ToUpper();
             string hora = textBoxHora.Text;
             if (string.IsNullOrEmpty(placa))
             {
@@ -139,7 +140,7 @@ namespace Estacionamento
             textBoxPlacaVeiculo.Text = "";
             textBoxHora.Text = "";
             textBoxTempoPermanencia.Text = tempoPermanencia.TotalHours.ToString() + " horas";
-            textBoxValorPagar.Text = valorPago.ToString();
+            textBoxValorPagar.Text = valorPago.ToString("C2");
         }
 
         private void ControleGaragem_Load(object sender, EventArgs e)

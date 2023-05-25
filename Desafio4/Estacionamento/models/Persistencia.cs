@@ -19,7 +19,7 @@ namespace Estacionamento.models
                 {
                     linha = leitor.ReadLine();
                     vetorLinha = linha.Split(";");
-                    listaVeiculosEntrada.Add(new Veiculo(vetorLinha[0], DateTime.Parse(vetorLinha[1]), DateTime.Parse(vetorLinha[2])));
+                    listaVeiculosEntrada.Add(new Veiculo(vetorLinha[0].ToUpper(), DateTime.Parse(vetorLinha[1]), DateTime.Parse(vetorLinha[2])));
                 } while (!leitor.EndOfStream);
                 leitor.Close();
             }
@@ -39,7 +39,7 @@ namespace Estacionamento.models
                 {
                     linha = leitor.ReadLine();
                     vetorLinha = linha.Split(";");
-                    listaVeiculosSaida.Add(new Veiculo(vetorLinha[0], DateTime.Parse(vetorLinha[1]), DateTime.Parse(vetorLinha[2]), Double.Parse(vetorLinha[3]), Double.Parse(vetorLinha[4])));
+                    listaVeiculosSaida.Add(new Veiculo(vetorLinha[0].ToUpper(), DateTime.Parse(vetorLinha[1]), DateTime.Parse(vetorLinha[2]), Double.Parse(vetorLinha[3]), Double.Parse(vetorLinha[4])));
                 } while (!leitor.EndOfStream);
                 leitor.Close();
             }
