@@ -25,7 +25,7 @@ namespace Estacionamento.models
             }
             catch (Exception)
             {
-                Console.WriteLine("Problemas com arquivo");
+                
             }
         }
         public static void lerArquivoVeiculosSaida(List<Veiculo> listaVeiculosSaida)
@@ -45,7 +45,7 @@ namespace Estacionamento.models
             }
             catch (Exception)
             {
-                Console.WriteLine("Problemas com arquivo");
+                
             }
         }
         public static void gravarArquivoVeiculosEntrada(List<Veiculo> listaVeiculosEntrada)
@@ -63,7 +63,7 @@ namespace Estacionamento.models
             }
             catch (Exception)
             {
-                Console.WriteLine("Problemas com arquivo");
+                
             }
         }
         public static void gravarArquivoVeiculosSaida(List<Veiculo> listaVeiculosSaida)
@@ -81,7 +81,7 @@ namespace Estacionamento.models
             }
             catch (Exception)
             {
-                Console.WriteLine("Problemas com arquivo");
+               
             }
         }
     }

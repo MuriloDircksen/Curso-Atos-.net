@@ -10,7 +10,7 @@ namespace Estacionamento.models
     {
         public static bool TemVaga(List<Veiculo> listaVeiculos)
         {
-            if (listaVeiculos == null) return false;
+            if (listaVeiculos == null) return true;
 
             if(listaVeiculos.Count < 50) return true;
 

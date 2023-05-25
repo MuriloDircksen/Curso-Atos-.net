@@ -69,7 +69,7 @@ namespace Estacionamento.models
             
             double valorPago = ValorPago(tempoPermanencia);
             
-            listaVeiculosSaida.Add(new Veiculo(veiculo.PlacaVeiculo, veiculo.DataEntrada, veiculo.HoraEntrada, tempoPermanencia.TotalMinutes, valorPago));
+            listaVeiculosSaida.Add(new Veiculo(veiculo.PlacaVeiculo, veiculo.DataEntrada, veiculo.HoraEntrada, Math.Round(tempoPermanencia.TotalMinutes), valorPago));
             listaVeiculosEntrada.Remove(veiculo);
             
         }

@@ -12,8 +12,15 @@ namespace Estacionamento
             InitializeComponent();
             Persistencia.LerArquivoVeiculosEntrada(listaVeiculosEntrada);
             Persistencia.lerArquivoVeiculosSaida(listaVeiculosSaida);
-            atualizarTextBoxEntrada();
-            atualizarTextBoxSaida();
+            if (listaVeiculosEntrada.Count() > 0)
+            {
+                atualizarTextBoxEntrada();
+            }
+            if (listaVeiculosSaida.Count() > 0)
+            {
+                atualizarTextBoxSaida();
+            }
+
             labeldata.Text = DateTime.Now.ToString();
 
         }
@@ -22,8 +29,8 @@ namespace Estacionamento
             textBoxListaVeiculosEntrada.Clear();
             foreach (var item in listaVeiculosEntrada)
             {
-                textBoxListaVeiculosEntrada.AppendText(item.PlacaVeiculo + " ; " 
-                    + item.DataEntrada.ToString("dd/MM/yyyy") + " ; " 
+                textBoxListaVeiculosEntrada.AppendText(item.PlacaVeiculo + " ; "
+                    + item.DataEntrada.ToString("dd/MM/yyyy") + " ; "
                     + item.HoraEntrada.ToString("hh:mm:ss tt")
                     + Environment.NewLine);
             }
@@ -33,11 +40,11 @@ namespace Estacionamento
             textBoxListaSaidaVeiculos.Clear();
             foreach (var item in listaVeiculosSaida)
             {
-                textBoxListaSaidaVeiculos.AppendText(item.PlacaVeiculo + " ; " 
-                    + item.DataEntrada.ToString("dd/MM/yyyy") + " ; " 
-                    + item.HoraEntrada.ToString("hh:mm:ss tt") + " ; " 
-                    + item.TempoPermanencia + " ; " 
-                    + item.ValorCobrado 
+                textBoxListaSaidaVeiculos.AppendText(item.PlacaVeiculo + " ; "
+                    + item.DataEntrada.ToString("dd/MM/yyyy") + " ; "
+                    + item.HoraEntrada.ToString("hh:mm:ss tt") + " ; "
+                    + item.TempoPermanencia + " ; "
+                    + item.ValorCobrado
                     + Environment.NewLine);
             }
         }
@@ -69,13 +76,28 @@ namespace Estacionamento
             {
                 horaInformada = DateTime.Now;
             }
-            MessageBox.Show(horaInformada.ToString());
+
+            if (horaInformada.Hour >= 20 || horaInformada.Hour <= 07)
+            {
+                MessageBox.Show("Fora de expediente!");
+                textBoxPlacaVeiculo.Text = "";
+                textBoxHora.Text = "";
+                return;
+            }
+
+            if (!Garagem.TemVaga(listaVeiculosEntrada))
+            {
+                MessageBox.Show("Garagem Lotada");
+                textBoxPlacaVeiculo.Text = "";
+                textBoxHora.Text = "";
+                return;
+            }
             listaVeiculosEntrada.Add(new Veiculo(placa, horaInformada));
             atualizarTextBoxEntrada();
             Persistencia.gravarArquivoVeiculosEntrada(listaVeiculosEntrada);
             textBoxPlacaVeiculo.Text = "";
             textBoxHora.Text = "";
-            
+
 
 
         }
@@ -95,7 +117,7 @@ namespace Estacionamento
             {
                 MessageBox.Show("Nenhuma horário informado!");
                 return;
-            }            
+            }
             var testeHora = DateTime.TryParse(hora, out var horaInformada);
             if (!testeHora)
             {
@@ -115,9 +137,19 @@ namespace Estacionamento
             Persistencia.gravarArquivoVeiculosEntrada(listaVeiculosEntrada);
             Persistencia.gravarArquivoVeiculosSaida(listaVeiculosSaida);
             textBoxPlacaVeiculo.Text = "";
-            textBoxHora.Text = "";            
+            textBoxHora.Text = "";
             textBoxTempoPermanencia.Text = tempoPermanencia.TotalHours.ToString() + " horas";
             textBoxValorPagar.Text = valorPago.ToString();
+        }
+
+        private void ControleGaragem_Load(object sender, EventArgs e)
+        {
+            labeldata.Text = DateTime.Now.ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.labeldata.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         }
     }
 }

@@ -38,17 +38,13 @@
             labelListaVeiculosEntrada = new Label();
             labelListaVeiculosSaida = new Label();
             buttonEntrada = new Button();
-            timer1 = new System.Windows.Forms.Timer(components);
-            timer2 = new System.Windows.Forms.Timer(components);
-            timer3 = new System.Windows.Forms.Timer(components);
             labeldata = new Label();
-            timer4 = new System.Windows.Forms.Timer(components);
-            timer5 = new System.Windows.Forms.Timer(components);
             buttonsaida = new Button();
             label2 = new Label();
             label3 = new Label();
             textBoxTempoPermanencia = new TextBox();
             textBoxValorPagar = new TextBox();
+            timer1 = new System.Windows.Forms.Timer(components);
             SuspendLayout();
             // 
             // label1
@@ -95,12 +91,12 @@
             // 
             // textBoxListaSaidaVeiculos
             // 
-            textBoxListaSaidaVeiculos.Location = new Point(628, 213);
+            textBoxListaSaidaVeiculos.Location = new Point(617, 213);
             textBoxListaSaidaVeiculos.Multiline = true;
             textBoxListaSaidaVeiculos.Name = "textBoxListaSaidaVeiculos";
             textBoxListaSaidaVeiculos.ReadOnly = true;
             textBoxListaSaidaVeiculos.ScrollBars = ScrollBars.Vertical;
-            textBoxListaSaidaVeiculos.Size = new Size(395, 139);
+            textBoxListaSaidaVeiculos.Size = new Size(406, 139);
             textBoxListaSaidaVeiculos.TabIndex = 7;
             // 
             // labelListaVeiculosEntrada
@@ -134,11 +130,11 @@
             // labeldata
             // 
             labeldata.AutoSize = true;
-            labeldata.Location = new Point(935, 15);
+            labeldata.Location = new Point(859, 9);
             labeldata.Name = "labeldata";
-            labeldata.Size = new Size(50, 20);
+            labeldata.Size = new Size(63, 20);
             labeldata.TabIndex = 11;
-            labeldata.Text = "label2";
+            labeldata.Text = "13:52:14";
             // 
             // buttonsaida
             // 
@@ -153,7 +149,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(597, 77);
+            label2.Location = new Point(592, 47);
             label2.Name = "label2";
             label2.Size = new Size(143, 20);
             label2.TabIndex = 13;
@@ -162,7 +158,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(597, 121);
+            label3.Location = new Point(592, 91);
             label3.Name = "label3";
             label3.Size = new Size(96, 20);
             label3.TabIndex = 14;
@@ -170,7 +166,7 @@
             // 
             // textBoxTempoPermanencia
             // 
-            textBoxTempoPermanencia.Location = new Point(761, 74);
+            textBoxTempoPermanencia.Location = new Point(756, 44);
             textBoxTempoPermanencia.Name = "textBoxTempoPermanencia";
             textBoxTempoPermanencia.ReadOnly = true;
             textBoxTempoPermanencia.Size = new Size(125, 27);
@@ -178,11 +174,16 @@
             // 
             // textBoxValorPagar
             // 
-            textBoxValorPagar.Location = new Point(761, 114);
+            textBoxValorPagar.Location = new Point(756, 84);
             textBoxValorPagar.Name = "textBoxValorPagar";
             textBoxValorPagar.ReadOnly = true;
             textBoxValorPagar.Size = new Size(125, 27);
             textBoxValorPagar.TabIndex = 16;
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
             // 
             // ControleGaragem
             // 
@@ -206,6 +207,7 @@
             Controls.Add(label1);
             Name = "ControleGaragem";
             Text = "Garagem";
+            Load += ControleGaragem_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -221,16 +223,12 @@
         private Label labelListaVeiculosEntrada;
         private Label labelListaVeiculosSaida;
         private Button buttonEntrada;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Timer timer3;
         private Label labeldata;
-        private System.Windows.Forms.Timer timer4;
-        private System.Windows.Forms.Timer timer5;
         private Button buttonsaida;
         private Label label2;
         private Label label3;
         private TextBox textBoxTempoPermanencia;
         private TextBox textBoxValorPagar;
+        private System.Windows.Forms.Timer timer1;
     }
 }
