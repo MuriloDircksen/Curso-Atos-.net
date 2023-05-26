@@ -66,7 +66,7 @@ namespace Estacionamento.models
             var veiculo = RetornaVeiculo(listaVeiculosEntrada, placa);
             
             var tempoPermanencia =   horaDeSaida - veiculo.HoraEntrada;
-            
+
             double valorPago = ValorPago(tempoPermanencia);
             
             listaVeiculosSaida.Add(new Veiculo(veiculo.PlacaVeiculo, veiculo.DataEntrada, veiculo.HoraEntrada, Math.Round(tempoPermanencia.TotalMinutes), valorPago));

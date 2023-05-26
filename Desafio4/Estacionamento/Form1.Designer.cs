@@ -58,7 +58,9 @@
             // 
             // textBoxPlacaVeiculo
             // 
+            textBoxPlacaVeiculo.CharacterCasing = CharacterCasing.Upper;
             textBoxPlacaVeiculo.Location = new Point(168, 38);
+            textBoxPlacaVeiculo.MaxLength = 7;
             textBoxPlacaVeiculo.Name = "textBoxPlacaVeiculo";
             textBoxPlacaVeiculo.Size = new Size(125, 27);
             textBoxPlacaVeiculo.TabIndex = 1;

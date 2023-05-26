@@ -1,0 +1,17 @@
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\Pessoa.csproj.AssemblyReference.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\Pessoa.Form1.resources
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\Pessoa.csproj.GenerateResource.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\Pessoa.GeneratedMSBuildEditorConfig.editorconfig
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\Pessoa.AssemblyInfoInputs.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\Pessoa.AssemblyInfo.cs
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\Pessoa.csproj.CoreCompileInputs.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\bin\Debug\net6.0-windows\Pessoa.exe
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\bin\Debug\net6.0-windows\Pessoa.deps.json
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\bin\Debug\net6.0-windows\Pessoa.runtimeconfig.json
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\bin\Debug\net6.0-windows\Pessoa.dll
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\bin\Debug\net6.0-windows\Pessoa.pdb
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\Pessoa.dll
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\refint\Pessoa.dll
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\Pessoa.pdb
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\Pessoa.genruntimeconfig.cache
+D:\Murilo\ws_visualstudio\AcademiaAtos\Desafio\Desafio4\Pessoa\obj\Debug\net6.0-windows\ref\Pessoa.dll
