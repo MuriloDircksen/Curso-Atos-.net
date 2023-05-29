@@ -24,11 +24,11 @@ namespace Pessoa
                 leitor.Close();
                 for (int i = 0; i < listaAuxiliar.Count(); i++)
                 {
-                    char linhaAtual = 'Z';
+                    char linhaAtual = listaAuxiliar[i].FirstOrDefault(); ;
                     char linhaPosterior = 'Z';
                     if (i < listaAuxiliar.Count()-1)
                     {
-                        linhaAtual = listaAuxiliar[i].FirstOrDefault();
+                        //linhaAtual = listaAuxiliar[i].FirstOrDefault();
                         linhaPosterior = listaAuxiliar[i + 1].FirstOrDefault();
                     }
                     if (linhaAtual == 'Z' && linhaPosterior == 'Y')

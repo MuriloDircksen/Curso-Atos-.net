@@ -24,7 +24,7 @@ namespace Pessoa
 
             foreach (var aluno in listaAlunos)
             {
-                textBoxListaAlunos.AppendText("Nome: " + aluno.Nome + " Curso: " + aluno.NomeCurso + Environment.NewLine);
+                textBoxListaAlunos.AppendText("Nome: " + aluno.Nome + ", Curso: " + aluno.NomeCurso + Environment.NewLine);
             }
 
             foreach (var pessoas in listaPessoas)
